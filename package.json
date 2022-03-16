@@ -21,7 +21,20 @@
     "test:acceptance": "npx dotenv -e .env.test.local -- jest test/acceptance/* --forceExit --maxWorkers=4 --detectOpenHandles",
     "test:coverage": "npx dotenv -e .env.test.local -- jest packages/* --forceExit --detectOpenHandles --maxWorkers=4 --coverage",
     "test:mid-level": "npx dotenv -e .env.test.local -- jest test/mid-level/* --forceExit --detectOpenHandles --maxWorkers=4",
-    "test:unit": "npx dotenv -e .env.test.local -- jest packages/* --forceExit --detectOpenHandles --maxWorkers=4"
+    "test:unit": "npx dotenv -e .env.test.local -- jest packages/* --forceExit --detectOpenHandles --maxWorkers=4",
+    "migrate:up": "yarn db-migrate up",
+    "migrate:down": "yarn db-migrate down",
+    "migrate:save": "npx dotenv -e .env.local -- yarn db-migrate create",
+    "introspect": "npx dotenv -e .env.local -- yarn prisma db pull --force",
+    "studio": "npx dotenv -e .env.local -- yarn prisma studio",
+    "migrate:local": "npx dotenv -e .env.local -- yarn migrate:up",
+    "migrate:local:down": "npx dotenv -e .env.local -- yarn migrate:down",
+    "migrate:test": "npx dotenv -e .env.test.local -- yarn migrate:up",
+    "migrate:test:down": "npx dotenv -e .env.test.local -- yarn migrate:down",
+    "migrate": "yarn migrate:local && yarn migrate:test",
+    "migrate-down": "yarn migrate:local:down && yarn migrate:test:down",
+    "prepdb": "yarn migrate && yarn introspect && yarn prisma generate",
+    "prepdb:down": "yarn migrate-down && yarn introspect && yarn prisma generate"
   },
   "repository": {
     "type": "git",
