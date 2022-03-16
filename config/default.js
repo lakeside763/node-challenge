@@ -3,9 +3,11 @@ const path = require('path');
 
 module.exports = {
   db: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 5432,
     database: 'challenge',
+    user: 'postgres',
+    password: 'password',
   },
   debug: {
     stackSize: 4,
@@ -15,7 +17,7 @@ module.exports = {
   },
   host: 'localhost:9001',
   https: {
-    enabled: false,
+    enabled: true,
   },
   port: process.env.PORT || 9001,
   shutdown: {
