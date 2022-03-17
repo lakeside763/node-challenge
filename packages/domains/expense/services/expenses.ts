@@ -8,8 +8,28 @@ class ExpensesService {
     return expenses;
   }
 
-  async getExpensesByUserId({ userId: user_id }) {
-    const userExpenses = await prisma.expenses.findMany({ where: { user_id } });
+  async getExpensesByUserId({ user_id, pagination: { skip, take, search } }) {
+    const where = {
+      AND: { user_id },
+      OR: {},
+    };
+
+    if (search) {
+      where.OR = [
+        { merchant_name: { contains: search, mode: 'insensitive' } },
+        { status: { contains: search, mode: 'insensitive' } },
+      ];
+    } else {
+      delete where.OR;
+    }
+
+    const query = {
+      where,
+      take: take || 10,
+      skip: skip || 0,
+    };
+
+    const userExpenses = await prisma.expenses.findMany(query);
     if (!userExpenses) {
       throw new BadRequestError('Invalid user ID was provided');
     }

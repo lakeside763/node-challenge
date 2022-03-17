@@ -12,10 +12,10 @@ router.get('/get-all-expenses', async (req: Request, res: Response, next: NextFu
   }
 });
 
-router.get('/get-user-expenses/:userId', async (req: Request, res: Response) => {
+router.get('/get-user-expenses', async (req: Request, res: Response) => {
   try {
-    const userId: String = req.params.userId;
-    const userExpenses = await expensesService.getExpensesByUserId({ userId });
+    const input = req.body;
+    const userExpenses = await expensesService.getExpensesByUserId(input);
     return res.status(200).json(userExpenses);
   } catch (error) {
     return res.status(error.statusCode).send(error.message);
