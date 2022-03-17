@@ -69,5 +69,5 @@ package-lock.json
 
 bin
 
-.env.local
-.env.test.local
+!.env.local
+!.env.test.local
