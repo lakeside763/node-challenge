@@ -30,3 +30,27 @@ Take home test for Node.js developers.
 - yarn start (to start the application).
 - yarn test (to run test).
 ```
+
+### Application Routes
+
+1. Domain Route
+
+```
+GET Request
+https://localhost:9001/expense/v1/get-user-expenses
+{
+    "user_id": "da140a29-ae80-4f0e-a62d-6c2d2bc8a474",
+    "pagination": {
+        "skip": 0,
+        "take": "10",
+        "search": "Cafe"
+    }
+}
+```
+
+2. User Route
+
+```
+GET Request
+https://localhost:9001/user/v1/get-user-details/e17825a6-ad80-41bb-a76b-c5ee17b2f29d
+```
