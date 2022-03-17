@@ -21,6 +21,5 @@
     "types.d.ts",
     "packages/**/*.ts",
     "test/**/*.ts"
-  ]
+, "prisma/connect_prisma.ts"  ]
 }
-  

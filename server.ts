@@ -8,6 +8,7 @@ import helmet from 'helmet';
 import Logger from '@nc/utils/logging';
 import security from './middleware/security';
 import { router as userRoutes } from '@nc/domain-user';
+import { router as expenseRoutes } from '@nc/domain-expense';
 import https from 'https';
 
 const logger = Logger('server');
@@ -47,14 +48,14 @@ app.use(context);
 app.use(security);
 
 app.use('/user', userRoutes);
+app.use('/expense', expenseRoutes);
 
 app.use(function(err, req, res, next) {
   res.status(500).json(err);
 });
-
+console.log(process.env.DATABASE_URL);
 server.listen(config.port, () => {
   // server.ready = true;
   logger.log(`Server started on port ${config.port}`);
 });
-// const server = app.listen(config.port, () => logger.log(`Starting at localhost:${config.port}`));
 export default server;
