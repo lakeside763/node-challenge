@@ -37,9 +37,6 @@ node_modules/
 jspm_packages/
 
 
-.env.local
-.env.test.local
-
 # TypeScript v1 declaration files
 typings/
 
@@ -73,4 +70,6 @@ package-lock.json
 
 bin
 
+.env.local
+.env.test.local
 
