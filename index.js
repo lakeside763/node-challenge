@@ -14,5 +14,8 @@ require('ha-dns-cache')({ ttl: 5000, limit: 500 });
 require('ts-node')
   // Skip type check to speed up warm time and reduce memory usage
   .register({ transpileOnly: true });
+const { server, port, logger } = require('./server.ts');
 
-require('./server.ts');
+server.listen(port, () => {
+  logger.log(`Server started on port ${port}`);
+});

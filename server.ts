@@ -1,4 +1,3 @@
-/* eslint-disable sort-imports */
 import config from 'config';
 import context from './middleware/context';
 import express from 'express';
@@ -12,15 +11,16 @@ import { router as expenseRoutes } from '@nc/domain-expense';
 import https from 'https';
 import { errorHandler } from './middleware/error-handler';
 
-const logger = Logger('server');
-const app = express();
+export const logger = Logger('server');
+export const app = express();
+export const port = config.port;
 
 const options = {
   key: fs.readFileSync('./certs/test-key.key'),
   cert: fs.readFileSync('./certs/test-cert.pem'),
 };
 
-const server = https.createServer(options, app);
+export const server = https.createServer(options, app);
 
 gracefulShutdown(server);
 
@@ -32,7 +32,6 @@ app.get('/ok', (req, res) => {
 });
 
 app.get('/readycheck', function readinessEndpoint(req, res) {
-  // const status = (server.ready) ? 200 : 503;
   const status = 200;
   res.status(status).send(status === 200 ? 'OK' : 'NOT OK');
 });
@@ -51,9 +50,3 @@ app.use(security);
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 app.use(errorHandler);
-
-server.listen(config.port, () => {
-  // server.ready = true;
-  logger.log(`Server started on port ${config.port}`);
-});
-export default server;

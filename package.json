@@ -14,7 +14,7 @@
   },
   "scripts": {
     "watch": "npx dotenv -e .env.local -- nodemon index.js",
-    "start": "node index.js",
+    "start": "npx dotenv -e .env.local -- node index.js",
     "lint": "eslint --ext .ts --ext .js .",
     "lint:fix": "eslint --ext .ts --ext .js . --fix",
     "test": "yarn test:unit && yarn test:mid-level",
@@ -54,7 +54,6 @@
   },
   "homepage": "https://github.com/pleo-io/node-challenge#readme",
   "dependencies": {
-    "@nc/datase": "file:packages/database",
     "@nc/domain-expense": "0.0.0",
     "@nc/domain-user": "0.0.0",
     "@nc/utils": "0.0.0",

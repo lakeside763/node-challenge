@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS "expenses" (
   user_id uuid,
   date_created TIMESTAMP DEFAULT NOW() NOT NULL,
   date_updated TIMESTAMP DEFAULT NOW() NOT NULL,
+  status VARCHAR (32),
   PRIMARY KEY(id),
   FOREIGN KEY (user_id) REFERENCES "users"(id) ON DELETE CASCADE
 );

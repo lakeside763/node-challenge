@@ -4,8 +4,7 @@ VALUES
   ('e17825a6-ad80-41bb-a76b-c5ee17b2f29d', 'petr', 'janda',	'pleo',	'2'),
   ('3d16547a-79f6-4f62-9034-d3bfb31fb37c',	'olov',	'eriksson',	'pleo',	'3');
 
-ALTER TABLE expenses
-ADD COLUMN status VARCHAR(100);
+
 
 INSERT INTO public.expenses (id, merchant_name, amount_in_cents, currency, user_id, date_created, status)
 VALUES
