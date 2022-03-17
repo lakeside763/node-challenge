@@ -10,6 +10,7 @@ import security from './middleware/security';
 import { router as userRoutes } from '@nc/domain-user';
 import { router as expenseRoutes } from '@nc/domain-expense';
 import https from 'https';
+import { errorHandler } from './middleware/error-handler';
 
 const logger = Logger('server');
 const app = express();
@@ -49,11 +50,8 @@ app.use(security);
 
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
+app.use(errorHandler);
 
-app.use(function(err, req, res, next) {
-  res.status(500).json(err);
-});
-console.log(process.env.DATABASE_URL);
 server.listen(config.port, () => {
   // server.ready = true;
   logger.log(`Server started on port ${config.port}`);

@@ -1,3 +1,4 @@
+/* eslint-disable sort-imports */
 import { ApiError } from '@nc/utils/errors';
 import { Router } from 'express';
 import { secureTrim } from '../formatter';
@@ -20,8 +21,4 @@ router.get('/get-user-details', async (req, res, next) => {
   }
 
   return res.json(secureTrim(userDetails));
-});
-
-router.get('/current-user', (req, res) => {
-  res.status(200).json({ name: 'lakeside', status: 'Admin' });
 });
