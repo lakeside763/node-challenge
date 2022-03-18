@@ -50,9 +50,3 @@ app.use(security);
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 app.use(errorHandler);
-
-app.use((err, req, res, next) => {
-  const status = err.status || 500;
-  res.status(status);
-  next();
-});
