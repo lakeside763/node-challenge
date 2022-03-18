@@ -1,4 +1,4 @@
-import prisma from '../../../../prisma/connect_prisma';
+import prisma from '@nc/database/prisma/connect_prisma';
 import supertest from 'supertest';
 import { app } from '../../../../server';
 
@@ -43,8 +43,17 @@ describe('User expenses model', () => {
     const expenses = await prisma.expenses.create({
       data: { ...expensesData, users: { connect: { id: user_id } } },
     });
+
+    const reqBodyData = {
+      user_id,
+      pagination: {
+        skip: 0,
+        take: 10,
+      },
+    };
     const { statusCode, body } = await request
-      .get(`/expense/v1/get-user-expenses/${user_id}`)
+      .get('/expense/v1/get-user-expenses')
+      .send(reqBodyData)
       .then((res) => {
         return { statusCode: res.statusCode, body: res.body };
       });

@@ -1,4 +1,4 @@
-import prisma from '../../../../prisma/connect_prisma';
+import prisma from '@nc/database/prisma/connect_prisma';
 import supertest from 'supertest';
 import { app } from '../../../../server';
 
