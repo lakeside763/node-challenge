@@ -8,27 +8,46 @@ Take home test for Node.js developers.
    - application server connection was refactor to allow the application connect over secure endpoints
 2. Setting up of environment variable both for dev and test environment.
 3. evn.local.example added to the application as a guide for setting up env variables.
-4. Database Migration setup using DB-Migrate.
+4. Database package was setup to allow to manage Database migration and Prisma configuration
+5. Database Migration setup using DB-Migrate.
    - The essence of database migration is to allow easy database setup
    - Create database schema etc.
    - Allow to Alter database schema, fields etc if needed.
-5. Prisma Setup
+6. Prisma Setup
    - Prisma is consider as Next-generation Node.js and Typescript ORM
    - It helps to communcate with database using json data format
    - it also provide datatype typings
-6. Domain Route Setup
-7. Domain Service Setup
-8. Unit testing and Integration testing for Domain route endpoints queries
-9. Refactoring of User Route to more conform standard.
-10. Update README.md files
+7. Domain Route Setup
+8. Domain Service Setup
+9. Unit testing and Integration testing for Domain route endpoints queries
+10. Refactoring of User Route to more conform standard.
+11. Update README.md files
+
+### Application setup
+```
+- Run yarn install (to install all the application packages).
+```
+
+### Env setup
+```
+- Setup .env.local file in the root directory for running the application
+- Setup .env.test.local file the root directory for running test
+```
+
+### Database Migration Setup
+```
+- Navigate into database package directory using (cd packages/database).
+- Run yarn prepdb (to setup the database migration and seed sample data into database)
+```
 
 ### Starts the application
-
 ```
-- Setup the env configuration using env.local.example file
-- yarn prepdb (to setup database migration and seed sammple data)
-- yarn start (to start the application).
-- yarn test (to run test).
+- Run NODE_DEBUG=DEBUG yarn start
+```
+
+### Run test(Unit and Integration testing)
+```
+- Run yarn test
 ```
 
 ### Application Routes
@@ -37,15 +56,18 @@ Take home test for Node.js developers.
 
 ```
 GET Request
-https://localhost:9001/expense/v1/get-user-expenses
-{
-    "user_id": "da140a29-ae80-4f0e-a62d-6c2d2bc8a474",
-    "pagination": {
-        "skip": 0,
-        "take": "10",
-        "search": "Cafe"
-    }
-}
+1. https://localhost:9001/expense/v1/get-all-expenses
+
+2. https://localhost:9001/expense/v1/get-user-expenses
+   - req.body data
+   {
+      "user_id": "da140a29-ae80-4f0e-a62d-6c2d2bc8a474",
+      "pagination": {
+         "skip": 0,
+         "take": 10,
+         "search": "Cafe"
+      }
+   }
 ```
 
 2. User Route
