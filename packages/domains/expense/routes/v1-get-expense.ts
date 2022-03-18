@@ -18,6 +18,6 @@ router.get('/get-user-expenses', async (req: Request, res: Response) => {
     const userExpenses = await expensesService.getExpensesByUserId(input);
     return res.status(200).json(userExpenses);
   } catch (error) {
-    return res.status(error.statusCode).send(error.message);
+    return res.status(error.statusCode).end(error.message);
   }
 });

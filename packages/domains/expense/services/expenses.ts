@@ -1,6 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { BadRequestError } from '@nc/utils/errors/bad-request-error';
-import prisma from '../../../../prisma/connect_prisma';
+import prisma from '@nc/database/prisma/connect_prisma';
 
 class ExpensesService {
   async getAllExpenses() {

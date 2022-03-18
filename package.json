@@ -54,6 +54,7 @@
   },
   "homepage": "https://github.com/pleo-io/node-challenge#readme",
   "dependencies": {
+    "@nc/database": "0.0.0",
     "@nc/domain-expense": "0.0.0",
     "@nc/domain-user": "0.0.0",
     "@nc/utils": "0.0.0",

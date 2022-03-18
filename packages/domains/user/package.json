@@ -4,6 +4,7 @@
   "description": "User domain logic",
   "private": true,
   "dependencies": {
+    "@nc/database": "0.0.0",
     "@nc/utils": "^0.0.0",
     "express": "^4.17.0"
   },

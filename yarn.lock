@@ -1621,7 +1621,7 @@ db-migrate-base@^2.3.0:
 
 db-migrate-pg@^1.2.2:
   version "1.2.2"
-  resolved "https://registry.npmjs.org/db-migrate-pg/-/db-migrate-pg-1.2.2.tgz"
+  resolved "https://registry.yarnpkg.com/db-migrate-pg/-/db-migrate-pg-1.2.2.tgz#66436dbad0ba398c05851d200f768db6b2e5bc1a"
   integrity sha512-+rgrhGNWC2SzcfweopyZqOQ1Igz1RVFMUZwUs6SviHpOUzFwb0NZWkG0pw1GaO+JxTxS7VJjckUWkOwZbVYVag==
   dependencies:
     bluebird "^3.1.1"
@@ -1636,7 +1636,7 @@ db-migrate-shared@^1.2.0:
 
 db-migrate@^0.11.13:
   version "0.11.13"
-  resolved "https://registry.npmjs.org/db-migrate/-/db-migrate-0.11.13.tgz"
+  resolved "https://registry.yarnpkg.com/db-migrate/-/db-migrate-0.11.13.tgz#b9e5b242c62e82ef8ed2b29e118698813e953d67"
   integrity sha512-OE/bbDo/mQvLmZrui/2jNAiAECJROSURCOU5xs6qKr3FvtUE2O6b0xBUI6WyAAKdili3LJQHFlpqugiYCGTSBA==
   dependencies:
     balanced-match "^1.0.0"
@@ -1812,7 +1812,7 @@ dot-prop@^5.2.0:
 
 dotenv-cli@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmjs.org/dotenv-cli/-/dotenv-cli-5.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/dotenv-cli/-/dotenv-cli-5.0.0.tgz#13ff77794096b00968d96187e4c8674e045461f3"
   integrity sha512-0Cb2WMDJ805hTD7m43gXXFLraoE5KwrKmGW2dAzYvSEB96tlKI2hmcJ/9In4s2FfvkAFk3SjNQcLeKLoRSXhKA==
   dependencies:
     cross-spawn "^7.0.3"
@@ -1832,7 +1832,7 @@ dotenv@^10.0.0:
 
 dotenv@^16.0.0:
   version "16.0.0"
-  resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.0.tgz#c619001253be89ebb638d027b609c75c26e47411"
   integrity sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==
 
 dotenv@^5.0.1:

@@ -1,2 +1,0 @@
-ALTER TABLE "expenses"
-REMOVE COLUMN status IF EXISTS;
