@@ -17,35 +17,41 @@ Take home test for Node.js developers.
    - Prisma is consider as Next-generation Node.js and Typescript ORM
    - It helps to communcate with database using json data format
    - it also provide datatype typings
-7. Domain Route Setup
-8. Domain Service Setup
+7. Domain Routes Setup
+8. Domain Services Setup
 9. Unit testing and Integration testing for Domain route endpoints queries
-10. Refactoring of User Route to more conform standard.
+10. Refactoring of User Routes to more conform standard.
 11. Update README.md files
 
 ### Application setup
+
 ```
 - Run yarn install (to install all the application packages).
 ```
 
 ### Env setup
+
 ```
 - Setup .env.local file in the root directory for running the application
 - Setup .env.test.local file the root directory for running test
+- Use env.local.example file as a guide for setting up both the .env.local and env.test.local file
 ```
 
 ### Database Migration Setup
+
 ```
 - Navigate into database package directory using (cd packages/database).
 - Run yarn prepdb (to setup the database migration and seed sample data into database)
 ```
 
 ### Starts the application
+
 ```
 - Run NODE_DEBUG=DEBUG yarn start
 ```
 
 ### Run test(Unit and Integration testing)
+
 ```
 - Run yarn test
 ```
